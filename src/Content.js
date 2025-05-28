@@ -1,44 +1,42 @@
 import React from 'react'
+import { useState } from 'react'
 
-const content = () => {
+
+
+const Content = () => {
+    const [name , setName] = useState('shadrack attaboy')
+    const [count , setCount] = useState(0)
+    
     const name_functions =() =>{
         const names = [ 'shadrack','kinsimba','kabazo']
         let rand_number = Math.floor(Math.random()*3)
-        return names[rand_number]
+        setName( names[rand_number])
       }
       const handleClick = () =>{
-        console.log('you clicked it ')
-
-      }
+        console.log(count)
+        let i = count +1
+        setCount(i)
+}
       const handleClick2 = (name) =>{
         console.log(`${name} was clicked` )
 
       }
-      const handleClick3 = (e) =>{
-        console.log(e.target)
+      const handleClick3 = () =>{
+        let i = count -1
+        setCount(i)
 
       }
   return (
     <main>
-        <p>
-            {name_functions()}
-
-        </p>
-        <button onDoubleClick={handleClick}>
-            check it1
-
-        </button><br/>
-        <button onClick={()=> handleClick2('attaboy43')}>
-            check it2
-
-        </button>
-        <button onClick={(e)=> handleClick3(e)}>
-            check it3
-
-        </button>
+        <p> Hello , {name}</p>
+        <p> Number count , {count}</p>
+        <button onClick={name_functions}>change name</button><br/>
+        <button onClick={handleClick}>add count</button><br/>
+        <button onClick={handleClick3}>sub count</button>
+        <button onClick={(e)=> handleClick3(e)}>check it3</button>
 
     </main>
   )
 }
 
-export default content
+export default Content
