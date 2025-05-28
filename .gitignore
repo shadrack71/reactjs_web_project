@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+ADVANCED_REACTJS.code-workspace
 
 # testing
 /coverage
