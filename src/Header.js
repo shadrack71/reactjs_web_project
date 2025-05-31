@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Header = () => {
+const Header = ({title}) => {
     const stleFunction ={
          backgroundColor:'green',
     color:'white'
@@ -10,10 +10,13 @@ const Header = () => {
   return (
    <header style={ stleFunction}>
     <h1>
-        my shop list
+      {title}
     </h1>
    </header>
   )
+}
+Header.defaultProps = {
+  title:'Default title'
 }
 
 export default Header
