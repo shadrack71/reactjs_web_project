@@ -16,9 +16,6 @@ const ItemList = ({items,handleCheck,handleDelete}) => {
     ))}
   </ul>
 
-
-
-
   )
 }
 
